@@ -1,0 +1,42 @@
+.row {
+    --bs-gutter-x: 0rem;
+}
+
+.container {
+    padding-top: 2%;
+}
+
+body {
+    width: 100%;
+    height: 642.5px;
+    background-color:aquamarine;
+}
+
+#coluna_cadastro {
+    background-image: url("../../assets/Images/bg1-green.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.formulario-cadastro{
+    margin-top: 50%;
+}
+
+.texto-cadastro {
+    font-size: 1.5rem;
+    padding: 10%;
+}
+
+.botao-cadastro{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.titulo-cadastro, .titulo-login{
+    font-weight: bold;
+}
+
+.titulo-cadastro {
+    font-size:xx-large;
+}
