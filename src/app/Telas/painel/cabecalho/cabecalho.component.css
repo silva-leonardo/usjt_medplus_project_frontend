@@ -1,0 +1,21 @@
+header {
+    background-color: #7FFFD4;
+    height: 10em;
+}
+
+.container-cabecalho {
+    position: relative;
+    margin: 0 5%;
+    height: 10em;
+}
+
+.conteudo-usuario {
+    position:absolute;
+    top: 3em;
+    right: 0;
+}
+
+.logo {
+    width: 30%;
+    height: 10em;
+}
