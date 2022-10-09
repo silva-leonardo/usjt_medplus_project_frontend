@@ -1,0 +1,42 @@
+
+#menu {
+    width: 30%;
+    margin: 0; padding: 0;
+    float: left;
+    background: #F5F5F5;
+}
+
+#menu ul li {
+    margin: 0; padding: 0px;
+    border-bottom: 3px solid #2CBC2C;
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+#menu a:link {
+    background: #F5F5F5;
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+    padding: 15%;
+    display: block;
+    height: 40px;
+    color: #000000;
+}
+
+#menu a:hover {
+    background:#2CBC2C;
+}
+
+a:visited {
+     color: #000000;
+}
+ 
+a:hover {
+     color: #000000;
+}
+ 
+a:active {
+     color: red;
+}
