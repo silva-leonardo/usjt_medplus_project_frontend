@@ -1,0 +1,44 @@
+body {
+    max-width: 100% !important;
+    width: 100%;
+    height: 100% !important;
+    background-color:#7fffd4;
+}
+
+.container {
+    padding: 3%;
+}
+
+#coluna_cadastro {
+    background-image: url("../../../assets/Images/bg1-green.jpg");
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-origin: padding-box;
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+}    
+.formulario-cadastro{
+    margin-top: 50%;
+}
+
+.texto-cadastro {
+    font-size: 1.5rem;
+    padding: 10%;
+}
+
+.botao-cadastro{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.titulo-cadastro, .titulo-login{
+    font-weight: bold;
+    padding-bottom: 2%;
+}
+
+.titulo-cadastro {
+    font-size:xx-large;
+}
