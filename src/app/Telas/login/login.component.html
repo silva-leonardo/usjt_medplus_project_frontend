@@ -14,27 +14,35 @@
     <section class="container" id="container-principal">
         <div class="row justify-content-md-center ">
           <div class="col col-lg-6" id="coluna_login">
-            <form class="p-4 p-md-5 border bg-light">
-              <div class="form-floating mb-3">
-                <img src="../../assets/Images/logo1.png" class="rounded mx-auto d-block" alt="logo">
-              </div>
-              <div class="form-floating mb-3 text-center">
-                <h1 class="titulo-login">Bem Vindo(a)</h1>
-                <h3>Faça seu login:</h3>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="cpf" class="form-control" id="inputCpf" placeholder="CPF"/>
-                <label for="inputCpf">CPF</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Senha"/>
-                <label for="inputPassword">Senha</label>
-              </div>
-              <div class="d-grid gap-2">
-                <button class="btn btn-success rounded-pill" (click)="loginUsuario()" routerLink="/painel" type="button">Acessar</button>
-              </div>
-            </form>
+            <mat-card>
+              <form
+                (submit)="login(clienteForm)"
+                #clienteForm="ngForm">
+                <mat-form-field>
+                  <input
+                    type="text"
+                    matInput
+                    placeholder="cpf"
+                    name="cpf"
+                    ngModel
+                    required
+                    minlength="13"/>
+                  <mat-error>Digite um CPF válido</mat-error>
+                </mat-form-field>
+            
+                <mat-form-field>
+                  <input
+                    type="password"
+                    matInput
+                    placeholder="senha"
+                    ngModel
+                    name="senha"
+                    required />
+                  <mat-error>Digite uma senha válida</mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="primary">Realizar Login</button>
+              </form>
+            </mat-card>
           </div>
           <div class="col col-lg-3" id="coluna_cadastro">
             <form class="formulario-cadastro">
