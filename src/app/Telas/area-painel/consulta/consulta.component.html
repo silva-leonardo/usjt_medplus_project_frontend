@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body class="body">
+    <div class=" cor-de-fundo container shadow-lg p-3 mb-5 bg-body rounded">
+        <main>
+            <div class="py-5 text-center" id="">
+                <img class=""
+                    src="https://cdn.discordapp.com/attachments/1022273617955913822/1026293411059351662/unknown.png"
+                    alt="" width="" height="">
+
+            </div>
+            <div class="container-formulario shadow-lg p-5" id="cor">
+
+                <h4 class="text-center"><b>Agendamento de Consultas</b></h4>
+                <br>
+                <form class="forms" novalidate="">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="firstName" class="form-label"><b>Nome:</b></label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Nome Completo" value=""
+                                required="">
+                            <div class="invalid-feedback">
+                                Seu nome completo é necessario
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="username" class="form-label"><b>CPF</b></label>
+                            <div class="input-group has-validation">
+                                <input type="text" class="form-control" id="username" placeholder="CPF" required="">
+                                <div class="invalid-feedback">
+                                    Seu CPF é necessario
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label"><b>Email </b><span class="text-muted"></span></label>
+                            <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com">
+                            <div class="invalid-feedback">
+                                Insira um endereço de e-mail válido
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="telefone" class="form-label"><b>Celular</b></label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="(xx)xxxxx-xxxx"
+                                required="tel">
+                            <div class="invalid-feedback">
+                                Numero Invalido
+                            </div>
+                        </div>
+
+                        <!DOCTYPE html>
+                        <html>
+                        <body>
+                            
+                            <label for="day" class="form-label"><b>Dia e Horário </b></label> 
+
+                            <div class="input-group">
+                                    <input type="date" class="form-control" id="data" name="data" required>
+                                <input type="time" id="hora"  class="form-control" name="hora" min="09:00" max="18:00" required>
+                              </div>                          
+                        </body>
+                        
+
+<select id="hours"></select>
+<select id="minutes"></select>
+
+<script>
+
+       function createOption(value, text) {
+              var option = document.createElement('option');
+              option.text = text;
+              option.value = value;
+              return option;
+       }
+
+       var hourSelect = document.getElementById('hours');
+       for(var i = 8; i <= 18; i++){
+              hourSelect.add(createOption(i, i));
+       }
+
+       var minutesSelect = document.getElementById('minutes');
+       for(var i = 0; i < 60; i += 15) {
+              minutesSelect.add(createOption(i, i));
+       }
+</script>
+
+
+                        </html>
+                        <div class="col-md-5">
+                            <label for="especialidade" class="form-label"><b>Especialidade</b></label>
+                            <select class="form-select" id="especialidade" required="">
+                                <option value="">Selecione...</option>
+                                <option>Cardiologista</option>
+                                <option>Dermatologista</option>
+                                <option>Radiografia</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor selecione uma especialidade.
+                            </div>
+                        </div>
+
+
+
+                        
+                    </div>
+
+
+                    <!-- <hr class="my-4"> -->
+
+
+
+                    <!--             <hr class="my-4">    //linha de quebra
+ -->
+
+
+
+
+
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <button class=" w-100 btn btn-primary btn-lg" type="submit">Agendar Consulta</button>
+                </form>
+            </div>
+
+        </main>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">© 2022 Med+</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a routerLink="/integrantes">Integrantes</a></li>
+                <li class="list-inline-item"><a routerLink="">Suporte</a></li>
+            </ul>
+        </footer>
+
+    </div>
+</body>
+
+</html>

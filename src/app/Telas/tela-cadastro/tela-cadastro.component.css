@@ -1,0 +1,31 @@
+.container-formulario{
+    margin-right: 20%;
+    margin-left:  20%;
+    
+}
+
+.forms{
+    align-items: center;
+    
+}
+
+.cor-de-fundo{
+    background-color: #80cc2b;
+}
+
+#cor{
+    background-color: #c8eba0;
+}
+
+#titulo{
+    font-style: bold;
+}
+
+@media only screen and (max-device-width: 900px) {
+
+    .container-formulario{
+        margin-right: 2%;
+        margin-left:  2%;
+        
+    }
+}
