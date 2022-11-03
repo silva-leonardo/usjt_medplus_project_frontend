@@ -1,0 +1,21 @@
+#conteiner {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+#borda{ 
+    border: 8px solid rgba(83, 83, 83, 0.027);
+}
+
+#centralizar{
+    text-align: center;
+}
+
+#cor-de-fundo{
+    background-color: hsl(199, 70%, 78%);
+}
+
+.cor{
+    background-color: #c8eba0;
+}

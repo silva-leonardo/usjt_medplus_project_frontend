@@ -14,8 +14,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Telas/login/login.component';
 import { PainelComponent } from './Telas/painel/painel.component';
+import { CadastroComponent } from './Telas/cadastro/cadastro.component';
+import { IntegrantesComponent } from './Telas/integrantes/integrantes.component';
 import { CabecalhoComponent } from './Telas/painel/cabecalho/cabecalho.component';
 import { NavegacaoComponent } from './Telas/painel/navegacao/navegacao.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { NavegacaoComponent } from './Telas/painel/navegacao/navegacao.component
     PainelComponent,
     CabecalhoComponent,
     NavegacaoComponent,
+    CadastroComponent,
+    IntegrantesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { NavegacaoComponent } from './Telas/painel/navegacao/navegacao.component
     MatExpansionModule,
     MatInputModule,
     MatToolbarModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
