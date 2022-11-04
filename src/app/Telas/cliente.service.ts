@@ -8,7 +8,7 @@ export class ClienteService {
 
   constructor(private htppClient: HttpClient) {
   }
-  
+
   ngOnInit(): void {
   }
   //método para login
@@ -21,8 +21,21 @@ export class ClienteService {
     //chamada API para realizar login
     this.htppClient.post<{mensagem: string, status: number}>('http://localhost:5000/login',cliente).subscribe((dados) => {
       alert(dados.mensagem + ' ' + dados.status);
-      //aqui colocaria a troca de tela se status = 200
-
+      window.location.href = '/painel';
+    });
+  }
+  cadastroUsuario(nome: String, cpf: String, dataNascimento: Date, sexo: String, celular: String, email: String, senha: String): void{
+    const paciente = {
+      nome,
+      cpf,
+      dataNascimento,
+      sexo,
+      celular,
+      email,
+      senha
+    }
+    this.htppClient.post<{mensagem: string, status: number}>('http://localhost:5000/cadastro/paciente',paciente).subscribe((dados)=> {
+      window.location.href = '/login';
     });
   }
 

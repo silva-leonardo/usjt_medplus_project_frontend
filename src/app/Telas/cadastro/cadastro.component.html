@@ -2,14 +2,14 @@
   <h1><b>CADASTRO</b></h1>
   <br>
 
-  <form (submit)="(clienteForm)" #clienteForm="ngForm">
+  <form (submit)="cadastro(clienteForm)" #clienteForm="ngForm">
     <mat-form-field>
       <input type="text" matInput placeholder="Nome Completo" name="Nome" ngModel required minlength="10" />
     </mat-form-field>
 
     <br>
     <mat-form-field>
-      <input type="text" matInput placeholder="cpf" ngModel name="cpf" required minlength="11" maxlength="11" />
+      <input type="text" matInput placeholder="cpf" ngModel name="cpf" required minlength="14" maxlength="14" />
       <mat-error>Digite uma CPF válido</mat-error>
     </mat-form-field>
     <br>
@@ -29,7 +29,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Sexo</mat-label>
-      <select matNativeControl required>
+      <select matNativeControl required name='sexo'>
         <option value="masc">Masculino</option>
         <option value="fem">Feminino</option>
         <option value="outro">Outro</option>
@@ -40,7 +40,7 @@
     <br>
 
     <mat-form-field>
-      <input type="text" matInput placeholder="Data de Nascimento" ngModel name="data.nasc" required required minlength="8" maxlength="8"/>
+      <input type="text" matInput placeholder="Data de Nascimento" ngModel name="datanasc" required required minlength="8" maxlength="8"/>
       <mat-error>Digite uma data de nascimento válido</mat-error>
     </mat-form-field>
     <br>
@@ -55,9 +55,9 @@
       <mat-error>Senhas diferentes!</mat-error>
     </mat-form-field>
 
-  </form>
+
   <br>
 
   <button mat-raised-button color="primary">Confirmar Cadastro</button>
-
+</form>
 </mat-card>
