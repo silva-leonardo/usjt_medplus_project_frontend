@@ -1,61 +1,24 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    
-    <title>Login - Inicial</title>
+<mat-card>
+  <mat-card-content class="card-login">
+    <mat-card-title>Faça Login</mat-card-title>
+    <mat-card-subtitle>Entre com suas credencias:</mat-card-subtitle>
+    <form (submit)="login(clienteForm)" #clienteForm="ngForm">
+      <mat-form-field>
+        <input type="text" matInput placeholder="CPF" name="cpf" ngModel required minlength="13" />
+        <mat-error>Digite um CPF válido</mat-error>
+      </mat-form-field>
 
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    
-    <section class="container" id="container-principal">
-        <div class="row justify-content-md-center ">
-          <div class="col col-lg-6" id="coluna_login">
-            <mat-card>
-              <form
-                (submit)="login(clienteForm)"
-                #clienteForm="ngForm">
-                <mat-form-field>
-                  <input
-                    type="text"
-                    matInput
-                    placeholder="cpf"
-                    name="cpf"
-                    ngModel
-                    required
-                    minlength="14"/>
-                  <mat-error>Digite um CPF válido</mat-error>
-                </mat-form-field>
-            
-                <mat-form-field>
-                  <input
-                    type="password"
-                    matInput
-                    placeholder="senha"
-                    ngModel
-                    name="senha"
-                    required />
-                  <mat-error>Digite uma senha válida</mat-error>
-                </mat-form-field>
-                <button mat-raised-button color="primary">Realizar Login</button>
-              </form>
-            </mat-card>
-          </div>
-          <div class="col col-lg-3" id="coluna_cadastro">
-            <form class="formulario-cadastro">
-              <div class="text-center">
-                <h2 class="titulo-cadastro">Primeira Vez Aqui?</h2>
-                <h3 class="texto-cadastro">Cadastre-se e começe a aproveitar nossos serviços!</h3>
-              </div>
-              <div class="d-grid gap-2 botao-cadastro">
-                <button class="btn btn-success btn rounded-pill " routerLink="/cadastro">Cadastro</button>
-              </div>
-            </form>
-          </div>
-        </div>
-    </section>
-  </body>
-</html>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Senha" ngModel name="senha" required />
+        <mat-error>Digite uma senha válida</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Entrar</button>
+    </form>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-content class="card-cadastro">
+    <mat-card-title>Cadastre-se</mat-card-title>
+    <mat-card-subtitle>Ainda não possui um cadastro?</mat-card-subtitle>
+    <button mat-raised-button color="primary" routerLink="/cadastro">Cadastrar</button>
+  </mat-card-content>
+</mat-card>
