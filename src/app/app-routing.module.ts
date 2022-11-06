@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './Telas/login/login.component';
-import { PainelComponent } from './Telas/painel/painel.component';
 import { CadastroComponent } from './Telas/cadastro/cadastro.component';
 import { IntegrantesComponent } from './Telas/integrantes/integrantes.component';
 import { ConsultaComponent } from './Telas/consulta/consulta.component';
+import { NavegacaoComponent } from './Telas/navegacao/navegacao.component';
+import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verificar.component';
+import { NavAgendarComponent } from './Telas/navegacao/nav-agendar/nav-agendar.component';
 
 const routes: Routes = [
   {
@@ -17,10 +19,6 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'painel',
-    component: PainelComponent
-  },
   { 
     path:'cadastro',
     component: CadastroComponent
@@ -30,8 +28,20 @@ const routes: Routes = [
     component: IntegrantesComponent
   },
   {
+    path:'navegacao',
+    component: NavegacaoComponent
+  },
+  {
     path:'consulta',
     component: ConsultaComponent
+  },
+  {
+    path:'nav-agendar',
+    component: NavAgendarComponent
+  },
+  {
+    path:'nav-verificar',
+    component: NavVerificarComponent
   }
 ];
 
