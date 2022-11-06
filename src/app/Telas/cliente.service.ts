@@ -38,5 +38,17 @@ export class ClienteService {
       window.location.href = '/login';
     });
   }
-
+  agendaConsulta(nome: String, cpf: String, email: String, dataConsulta: Date, especialidade: String,unidade: String): void{
+    const consulta = {
+      nome,
+      cpf,
+      email,
+      dataConsulta,
+      especialidade,
+      unidade
+    }
+    this.htppClient.post<{mensagem: String, status: Number}>('http://localhost:7000/consulta/agendar',consulta).subscribe((dados) => {
+      alert(`consulta agendada para o dia ${consulta.dataConsulta}`);
+    });
+  }
 }

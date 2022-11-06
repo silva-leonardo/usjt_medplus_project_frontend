@@ -3,7 +3,7 @@
     </b></h1>
     <br>
   
-    <form (submit)="(clienteForm)" #clienteForm="ngForm">
+    <form (submit)="consulta(clienteForm)" #clienteForm="ngForm">
       <mat-form-field appearance="outline">
         <input type="text" matInput placeholder="Nome Completo" name="Nome" ngModel required minlength="5" />
         <mat-error>Digite um nome valido</mat-error>
@@ -11,7 +11,7 @@
   
       <br>
       <mat-form-field appearance="outline">
-        <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="11" maxlength="11" />
+        <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="14" maxlength="14" />
         <mat-error>Digite uma CPF válido</mat-error>
       </mat-form-field>
       <br>
@@ -31,7 +31,7 @@
   
       <mat-form-field appearance="outline">
         <mat-label>Especialidade</mat-label>
-        <select matNativeControl required name='Especialidade'>
+        <select matNativeControl required name='Especialidade' (change)="handlerEspec($event)">
           <option value="Cardiologista">Cardiologista</option>
           <option value="cirurgião">Cirurgião</option>
           <option value="Psicologo">Psicologo</option>
@@ -45,9 +45,9 @@
   
       <mat-form-field appearance="outline">
         <mat-label>Unidade</mat-label>
-        <select matNativeControl required name='Especialidade'>
-          <option value="Cardiologista">Mooca</option>
-          <option value="Cardiologista">Tatuape</option>
+        <select matNativeControl required name='Unidade' (change)="handlerUnidade($event)">
+          <option value="Mooca">Mooca</option>
+          <option value="Tatuape">Tatuape</option>
         </select>
       </mat-form-field>
   
