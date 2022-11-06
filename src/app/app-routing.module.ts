@@ -8,12 +8,18 @@ import { ConsultaComponent } from './Telas/consulta/consulta.component';
 import { NavegacaoComponent } from './Telas/navegacao/navegacao.component';
 import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verificar.component';
 import { NavAgendarComponent } from './Telas/navegacao/nav-agendar/nav-agendar.component';
+import { HomepageComponent } from './Telas/homepage/homepage.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomepageComponent
   },
   {
     path: 'login',

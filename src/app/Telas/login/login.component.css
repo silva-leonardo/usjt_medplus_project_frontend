@@ -20,3 +20,9 @@ mat-form-field, input {
     margin-left: 10%;
     margin-right: 10%;
 }
+
+main {
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    height: 80%;
+}

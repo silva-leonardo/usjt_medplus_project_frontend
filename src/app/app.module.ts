@@ -26,6 +26,7 @@ import { HeaderComponent } from './Telas/header/header.component';
 import { FooterComponent } from './Telas/footer/footer.component';
 import { NavAgendarComponent } from './Telas/navegacao/nav-agendar/nav-agendar.component';
 import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verificar.component';
+import { HomepageComponent } from './Telas/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verif
     FooterComponent,
     NavAgendarComponent,
     NavVerificarComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,

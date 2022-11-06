@@ -1,0 +1,71 @@
+
+.icon {
+    width:100px;
+    height:100px;
+}
+
+.opcoes{
+    width: 200px;
+    height: 240px;
+}
+
+.container-cards {
+    width: 60%;
+    margin: auto;
+}
+
+mat-card-title {
+    text-align: center;
+}
+
+mat-card-content {
+    text-align: center;
+}
+
+img {
+    margin-left: 25%;
+}
+
+.agendamento {
+    margin-top: 2%;
+    background-color:antiquewhite;
+    height: 50%;
+    padding: 0;
+    flex: content;
+}
+
+.imagem-agendamento {
+    width: 50%;
+    height: 100%;
+    background-image: url(../../../assets/Images/doctor.jpg);
+    background-size: cover;
+}
+
+.conteudo-agendamento {
+    width: 50%;
+    position: absolute;
+    top: 70%;
+    right: 0;
+}
+
+.titulo, .conteudo-texto, button {
+    margin-left: 15%;
+}
+
+.titulo {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.conteudo-texto {
+    font-size: large;
+}
+
+p {
+    margin-top: 5%;
+}
+
+button {
+    width: 50%;
+    height: 50px;
+}
