@@ -1,14 +1,9 @@
-
 .cartao {
     max-width: 400px;
     margin-bottom: 8px ;
     border-radius: 5%;
     margin: auto;
  }
-
-mat-form-field, input {
-    width: 80%;
-}
 
 .ajuste{
     border-radius: 5%;
@@ -18,4 +13,14 @@ mat-form-field, input {
 
 .mat-card-title{
     font-size: large;
+}
+
+p {
+    margin-top: 10%;
+    max-width:120px;
+    font-size: small;
+}
+
+.primeiro{
+    margin-top: 10%;
 }
