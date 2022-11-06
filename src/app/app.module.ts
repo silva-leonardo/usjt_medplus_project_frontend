@@ -16,10 +16,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Telas/login/login.component';
 import { PainelComponent } from './Telas/painel/painel.component';
 import { CadastroComponent } from './Telas/cadastro/cadastro.component';
+import { ConsultaComponent } from './Telas/consulta/consulta.component';
 import { IntegrantesComponent } from './Telas/integrantes/integrantes.component';
 import { CabecalhoComponent } from './Telas/painel/cabecalho/cabecalho.component';
 import { NavegacaoComponent } from './Telas/painel/navegacao/navegacao.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CabecalhoComponent,
     NavegacaoComponent,
     CadastroComponent,
-    IntegrantesComponent
+    IntegrantesComponent,
+    ConsultaComponent,
+
   ],
   imports: [
     BrowserModule,

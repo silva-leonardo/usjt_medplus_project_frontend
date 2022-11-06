@@ -3,12 +3,12 @@
     <mat-card-title>Faça Login</mat-card-title>
     <mat-card-subtitle>Entre com suas credencias:</mat-card-subtitle>
     <form (submit)="login(clienteForm)" #clienteForm="ngForm">
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <input type="text" matInput placeholder="CPF" name="cpf" ngModel required minlength="13" />
         <mat-error>Digite um CPF válido</mat-error>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <input type="password" matInput placeholder="Senha" ngModel name="senha" required />
         <mat-error>Digite uma senha válida</mat-error>
       </mat-form-field>

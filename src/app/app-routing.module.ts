@@ -5,6 +5,7 @@ import { LoginComponent } from './Telas/login/login.component';
 import { PainelComponent } from './Telas/painel/painel.component';
 import { CadastroComponent } from './Telas/cadastro/cadastro.component';
 import { IntegrantesComponent } from './Telas/integrantes/integrantes.component';
+import { ConsultaComponent } from './Telas/consulta/consulta.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   { 
     path:'integrantes',
     component: IntegrantesComponent
+  },
+  {
+    path:'consulta',
+    component: ConsultaComponent
   }
 ];
 

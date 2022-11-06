@@ -1,0 +1,59 @@
+<mat-card>
+    <h1><b>Consulta
+    </b></h1>
+    <br>
+  
+    <form (submit)="(clienteForm)" #clienteForm="ngForm">
+      <mat-form-field appearance="outline">
+        <input type="text" matInput placeholder="Nome Completo" name="Nome" ngModel required minlength="5" />
+        <mat-error>Digite um nome valido</mat-error>
+      </mat-form-field>
+  
+      <br>
+      <mat-form-field appearance="outline">
+        <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="11" maxlength="11" />
+        <mat-error>Digite uma CPF válido</mat-error>
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field appearance="outline" >
+        <input  type="email" matInput placeholder="E-mail" ngModel name="email" required  />
+        <mat-error>Digite uma E-mail válida</mat-error>
+      </mat-form-field>
+
+      <br>
+      <mat-form-field appearance="outline">
+        <input type="date" matInput placeholder="DD/MM/AAAA" ngModel name="data" required minlength="" maxlength=""/>
+        <mat-error>Digite uma data valida</mat-error>
+      </mat-form-field>
+  
+      <br>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Especialidade</mat-label>
+        <select matNativeControl required name='Especialidade'>
+          <option value="Cardiologista">Cardiologista</option>
+          <option value="cirurgião">Cirurgião</option>
+          <option value="Psicologo">Psicologo</option>
+          <option value="oftamologista">oftamologista</option>
+          <option value="Pediatra">Pediatra</option>
+        </select>
+      </mat-form-field>
+  
+  
+      <br>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Unidade</mat-label>
+        <select matNativeControl required name='Especialidade'>
+          <option value="Cardiologista">Mooca</option>
+          <option value="Cardiologista">Tatuape</option>
+        </select>
+      </mat-form-field>
+  
+  
+    <br>
+  
+    <button mat-raised-button color="primary">Consultar</button>
+  </form>
+  </mat-card>
