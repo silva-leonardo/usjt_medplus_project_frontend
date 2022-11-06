@@ -10,7 +10,8 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatIconModule } from '@angular/material/icon'; 
+import { MatIconModule } from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,7 +39,6 @@ import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verif
     FooterComponent,
     NavAgendarComponent,
     NavVerificarComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -54,6 +54,7 @@ import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verif
     MatDividerModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

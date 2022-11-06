@@ -1,21 +1,21 @@
-#conteiner {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
+
+.cartao {
+    max-width: 400px;
+    margin-bottom: 8px ;
+    border-radius: 5%;
+    margin: auto;
+ }
+
+mat-form-field, input {
+    width: 80%;
 }
 
-#borda{ 
-    border: 8px solid rgba(83, 83, 83, 0.027);
+.ajuste{
+    border-radius: 5%;
+    width: 60%;
+    height: 60%;
 }
 
-#centralizar{
-    text-align: center;
-}
-
-#cor-de-fundo{
-    background-color: hsl(199, 70%, 78%);
-}
-
-.cor{
-    background-color: #c8eba0;
+.mat-card-title{
+    font-size: large;
 }

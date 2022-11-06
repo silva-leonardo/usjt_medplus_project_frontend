@@ -1,118 +1,79 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  </head>
-<body>
-<div id="centralizar"  class="cor" py-5 text-center>
-  <img  id="centralizar" class="img" src="https://cdn.discordapp.com/attachments/1022273617955913822/1026293411059351662/unknown.png"alt="" width="" height="">
-  <div class="container shadow-lg p-3 mb-5 bg-body rounded">
-    <main >
-      <div class="card-group" >
-        <div  class="card">
-          <img  id="borda" class="card-img-top" src="https://media.discordapp.net/attachments/1022273617955913822/1032475032489824286/unknown.png" alt="Card image cap">
-          <div class="card-body">
-            <ul class="list-group list-group">
-              <br>
-              <li class="list-group-item"><strong>Leonardo da Silva</strong> </li>
-              <li class="list-group-item">20 Anos</li>
-              <li class="list-group-item">Ciencia da Computação</li>
-              <li class="list-group-item">5º Semestre</li>
-            </ul>
-          </div>
-          <br>
-          <div class="card-footer">
-            <small class="text-muted"></small>
-          </div>
-        </div>
-        <div class="card">
-          <img  id="borda" class="card-img-top" src="https://media.discordapp.net/attachments/1022273617955913822/1032474848930304070/unknown.png" alt="Card image cap">
-          <div class="card-body">
-            <ul class="list-group list-group">
-              <br>
-              <li class="list-group-item"><strong>Thales Troia</strong> </li>
-              <li class="list-group-item">21 Anos</li>
-              <li class="list-group-item">Ciencia da Computação</li>
-              <li class="list-group-item">6º Semestre</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"></small>
-          </div>
-        </div>
-        <div class="card">
-          <img  id="borda" class="card-img-top" src="" alt="Card image cap">
-          <div class="card-body">
-            <ul class="list-group list-group">
-              <br>
-              <li class="list-group-item"><strong>Vinicius Farias </strong> </li>
-              <li class="list-group-item">18 Anos</li>
-              <li class="list-group-item">Ciencia da Computação</li>
-              <li class="list-group-item">4º Semestre</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"></small>
-          </div>
-        </div>
-      </div>
-    </main>     
-  </div>
-  <div class="container shadow-lg p-3 mb-5 bg-body rounded">
-    <main>
-      <div class="card-group">
-        <div class="card">
-          <img  id="borda" class="card-img-top" src="https://media.discordapp.net/attachments/1022273617955913822/1032470451324203099/unknown.png?width=475&height=475" alt="Card image cap">
-          <div class="card-body">
-            <ul class="list-group list-group">
-              <br>
-              <li class="list-group-item"><strong>Vinicius Ruffo Viviani</strong> </li>
-              <li class="list-group-item">21 Anos</li>
-              <li class="list-group-item">Analise e Desenvolvimento de Sistemas</li>
-              <li class="list-group-item">4º Semestre</li>
-            </ul>
-          </div>
-          <br>
-          <div class="card-footer">
-            <small class="text-muted"></small>
-          </div>
-        </div>
-        <div class="card">
-          <img  id="borda" class="card-img-top" src="https://media.discordapp.net/attachments/1022273617955913822/1033897312717643806/unknown.png" alt="Card image cap">
-          <div class="card-body">
-            <ul class="list-group list-group">
-              <br>
-              <li class="list-group-item"><strong>Rafael Tomazelli Lopes</strong> </li>
-              <li class="list-group-item">25 Anos</li>
-              <li class="list-group-item">Análise e desenvolvimento de sistemas</li>
-              <li class="list-group-item">4º Semestre</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"></small>
-          </div>
-        </div>
-        <div class="card">
-          <img  id="borda" class="card-img-top" src="https://media.discordapp.net/attachments/1022273617955913822/1032474640813133864/unknown.png" alt="Card image cap">
-          <div class="card-body">
-            <ul class="list-group list-group">
-              <br>
-              <li class="list-group-item"><strong>Marianna Monteiro</strong> </li>
-              <li class="list-group-item">21 Anos</li>
-              <li class="list-group-item">Ciencia da Computação</li>
-              <li class="list-group-item">6º Semestre</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"></small>
-          </div>
-        </div>
-      </div>
-    </main>     
-  </div>
-</div>
-</body>
-</html>
+<mat-grid-list cols="3" rowHeight="3:2">
+  <mat-grid-tile>
+    <mat-card class="cartao">
+      <mat-card-title-group>
+        <mat-card-title>Leonardo Silva</mat-card-title>
+          <img class="ajuste" mat-card-xl-image src="../../../assets/Images/leo.png">
+      </mat-card-title-group>
+      <mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="cartao">
+      <mat-card-title-group>
+        <mat-card-title>Thales Troia</mat-card-title>
+        <img class="ajuste" mat-card-xl-image src="../../../assets/Images/thales.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        <p>
+
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="cartao">
+      <mat-card-title-group>
+        <mat-card-title>Vinicius Gabriel</mat-card-title>
+        <img class="ajuste" mat-card-xl-image src="../../../assets/Images/leo.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        <p>
+
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  
+  <mat-grid-tile>
+    <mat-card class="cartao">
+      <mat-card-title-group>
+        <mat-card-title>Marianna Monteiro</mat-card-title>
+        <img class="ajuste" mat-card-xl-image src="../../../assets/Images/mari.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        <p>
+
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="cartao">
+      <mat-card-title-group>
+        <mat-card-title>Vinicius Ruffo</mat-card-title>
+        <img class="ajuste" mat-card-xl-image src="../../../assets/Images/ruffo.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        <p>
+
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="cartao">
+      <mat-card-title-group>
+        <mat-card-title>Rafael Lopes</mat-card-title>
+        <img class="ajuste" mat-card-xl-image src="../../../assets/Images/rafa.png">
+      </mat-card-title-group>
+      <mat-card-content>
+        <p>
+
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  
+</mat-grid-list>
