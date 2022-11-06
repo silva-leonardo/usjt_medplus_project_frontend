@@ -10,6 +10,8 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon'; 
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,9 +23,8 @@ import { IntegrantesComponent } from './Telas/integrantes/integrantes.component'
 import { CabecalhoComponent } from './Telas/painel/cabecalho/cabecalho.component';
 import { NavegacaoComponent } from './Telas/painel/navegacao/navegacao.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
+import { HeaderComponent } from './Telas/header/header.component';
+import { FooterComponent } from './Telas/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CadastroComponent,
     IntegrantesComponent,
     ConsultaComponent,
+    HeaderComponent,
+    FooterComponent,
 
   ],
   imports: [
@@ -50,6 +53,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatToolbarModule,
     MatDividerModule,
     BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

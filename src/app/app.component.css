@@ -1,3 +1,25 @@
 body {
-    background-color:#7fffd4;
+    background-color: aqua;
+    min-height: 780px;
+
+    background-image: linear-gradient(
+        315deg,
+        hsl(117deg 86% 71%) 0%,
+        hsl(160deg 85% 65%) 50%,
+        hsl(203deg 82% 58%) 100%,
+    );
+}
+
+main {
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    height: 80%;
+}
+
+app-header {
+    height: 10%;
+}
+
+app-footer {
+    height: 10%;
 }

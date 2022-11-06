@@ -1,18 +1,15 @@
 <mat-card>
   <h1><b>CADASTRO</b></h1>
-  <br>
 
   <form (submit)="cadastro(clienteForm)" #clienteForm="ngForm">
     <mat-form-field appearance="outline">
       <input type="text" matInput placeholder="Nome Completo" name="Nome" ngModel required minlength="10" />
     </mat-form-field>
 
-    <br>
     <mat-form-field appearance="outline">
       <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="12" maxlength="12 " />
       <mat-error>Digite uma CPF válido</mat-error>
     </mat-form-field>
-    <br>
 
     <mat-form-field appearance="outline">
       <input type="email" matInput placeholder="E-mail" ngModel name="email" required  />
@@ -20,15 +17,12 @@
       <mat-error>Digite uma E-mail válida</mat-error>
     </mat-form-field>
 
-    <br>
     <mat-form-field appearance="outline">
       <input type="tel" matInput placeholder="Telefone" ngModel name="tell" required minlength="11" maxlength="11"/>
       <mat-error>Digite um Telefone válido</mat-error>
     </mat-form-field>
 
-    <br>
-
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="sexo">
       <mat-label>Sexo</mat-label>
       <select matNativeControl required name='sexo'>
         <option value="masc">Masculino</option>
@@ -37,27 +31,20 @@
       </select>
     </mat-form-field>
 
-
-    <br>
-
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="data_nascimento">
       <input type="date" matInput placeholder="Data de Nascimento" ngModel name="datanasc" required required minlength="" maxlength=""/>
       <mat-error>Digite uma data de nascimento válido</mat-error>
     </mat-form-field>
-    <br>
-    <mat-form-field appearance="outline">
+
+    <mat-form-field appearance="outline" class="senha">
       <input type="password" matInput placeholder="Senha" ngModel name="senha" required required minlength="8" maxlength="15" />
       <mat-error>Digite uma senha válida</mat-error>
     </mat-form-field>
-    <br>
-
-    <mat-form-field appearance="outline">
+ 
+    <mat-form-field appearance="outline" class="senha">
       <input type="password" matInput placeholder="Confirmar Senha" ngModel name="confirm.senha" required required minlength="8" maxlength="15"/>
       <mat-error>Senhas diferentes!</mat-error>
     </mat-form-field>
-
-
-  <br>
 
   <button mat-raised-button color="primary">Confirmar Cadastro</button>
 </form>

@@ -1,0 +1,13 @@
+mat-toolbar {
+    min-height: 4em;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+img {
+    margin-top: 15px;
+    width: 80%;
+    height: 80%;
+}

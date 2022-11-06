@@ -25,3 +25,9 @@ title{
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.senha, .sexo, .data_nascimento {
+    width: 38%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
