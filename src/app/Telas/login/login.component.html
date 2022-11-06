@@ -4,7 +4,7 @@
     <mat-card-subtitle>Entre com suas credencias:</mat-card-subtitle>
     <form (submit)="login(clienteForm)" #clienteForm="ngForm">
       <mat-form-field appearance="outline">
-        <input type="text" matInput placeholder="CPF" name="cpf" ngModel required minlength="13" />
+        <input type="text" matInput placeholder="CPF" name="cpf" ngModel required minlength="14" />
         <mat-error>Digite um CPF válido</mat-error>
       </mat-form-field>
 

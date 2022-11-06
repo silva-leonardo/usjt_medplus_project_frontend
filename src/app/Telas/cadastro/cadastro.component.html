@@ -7,7 +7,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="12" maxlength="12 " />
+      <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="14" maxlength="14" />
       <mat-error>Digite uma CPF válido</mat-error>
     </mat-form-field>
 
@@ -24,7 +24,8 @@
 
     <mat-form-field appearance="outline" class="sexo">
       <mat-label>Sexo</mat-label>
-      <select matNativeControl required name='sexo'>
+      <select matNativeControl required name='sexo'
+      (change)="handler($event)">
         <option value="masc">Masculino</option>
         <option value="fem">Feminino</option>
         <option value="outro">Outro</option>

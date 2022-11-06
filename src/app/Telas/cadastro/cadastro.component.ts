@@ -12,20 +12,18 @@ export class CadastroComponent implements OnInit {
 
   constructor(private clienteService: ClienteService) {
   }
+  selected!: String;
+  handler($event: any): void {
+    console.log('selected value:: ', $event.target.value)
+    this.selected = $event.target.value;
+}
   cadastro(form: NgForm) {
-    console.log(form.value.Nome,
-      form.value.cpf,
-      form.value.datanasc,
-      form.value.sexo,
-      form.value.tell,
-      form.value.email,
-      form.value.senha)
     //executa o método de login no Service passando os valores
     this.clienteService.cadastroUsuario(
       form.value.Nome,
       form.value.cpf,
       form.value.datanasc,
-      form.value.sexo,
+      this.selected,
       form.value.tell,
       form.value.email,
       form.value.senha
