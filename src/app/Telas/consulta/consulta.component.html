@@ -32,11 +32,11 @@
       <mat-form-field appearance="outline">
         <mat-label>Especialidade</mat-label>
         <select matNativeControl required name='Especialidade' (change)="handlerEspec($event)">
-          <option value="Cardiologista">Cardiologista</option>
-          <option value="cirurgião">Cirurgião</option>
-          <option value="Psicologo">Psicologo</option>
-          <option value="oftamologista">oftamologista</option>
-          <option value="Pediatra">Pediatra</option>
+          <option value=1>Cardiologista</option>
+          <option value=2>Cirurgião</option>
+          <option value=3>Psicologo</option>
+          <option value=4>Oftamologista</option>
+          <option value=5>Pediatra</option>
         </select>
       </mat-form-field>
   
@@ -46,8 +46,8 @@
       <mat-form-field appearance="outline">
         <mat-label>Unidade</mat-label>
         <select matNativeControl required name='Unidade' (change)="handlerUnidade($event)">
-          <option value="Mooca">Mooca</option>
-          <option value="Tatuape">Tatuape</option>
+          <option value=01>Mooca</option>
+          <option value=02>Tatuape</option>
         </select>
       </mat-form-field>
   

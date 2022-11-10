@@ -1,0 +1,35 @@
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+mat-card{
+    margin: auto;
+    width: 80%;
+    max-width: 500px;
+    text-align: center
+    
+}
+
+mat-form-field, input {
+    width: 80%;
+}
+
+title{
+    text-align: center
+}
+
+.mat-raised-button {
+    line-height: 40px;
+    min-width: 80%;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.table {
+    width: 100%;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+}   

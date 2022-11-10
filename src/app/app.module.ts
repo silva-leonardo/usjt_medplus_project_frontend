@@ -27,6 +27,9 @@ import { FooterComponent } from './Telas/footer/footer.component';
 import { NavAgendarComponent } from './Telas/navegacao/nav-agendar/nav-agendar.component';
 import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verificar.component';
 import { HomepageComponent } from './Telas/homepage/homepage.component';
+import { VerificarComponent } from './Telas/verificar/verificar.component';
+import {MatList, MatListModule} from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +44,7 @@ import { HomepageComponent } from './Telas/homepage/homepage.component';
     NavAgendarComponent,
     NavVerificarComponent,
     HomepageComponent,
+    VerificarComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,8 +61,12 @@ import { HomepageComponent } from './Telas/homepage/homepage.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatGridListModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

@@ -9,6 +9,7 @@ import { NavegacaoComponent } from './Telas/navegacao/navegacao.component';
 import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verificar.component';
 import { NavAgendarComponent } from './Telas/navegacao/nav-agendar/nav-agendar.component';
 import { HomepageComponent } from './Telas/homepage/homepage.component';
+import { VerificarComponent } from './Telas/verificar/verificar.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path:'nav-verificar',
     component: NavVerificarComponent
+  },
+  {
+    path:'verificar',
+    component: VerificarComponent
   }
 ];
 
