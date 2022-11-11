@@ -28,7 +28,7 @@ img {
 
 .agendamento {
     margin-top: 2%;
-    background-color:antiquewhite;
+    background-color:#c8facb;
     height: 50%;
     padding: 0;
     flex: content;
@@ -37,7 +37,7 @@ img {
 .imagem-agendamento {
     width: 50%;
     height: 100%;
-    background-image: url(../../../assets/Images/doctor.jpg);
+    background-image: url(../../../assets/Images/a);
     background-size: cover;
 }
 

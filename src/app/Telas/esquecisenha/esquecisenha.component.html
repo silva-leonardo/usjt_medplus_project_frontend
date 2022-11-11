@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-content class="card-login">
+      <mat-card-title>Encontre sua conta</mat-card-title>
+      <form #clienteForm="ngForm">
+        <br>
+        <p>Insira seu email de recuperação, para redefinir sua senha.</p>
+        <mat-form-field appearance="outline">
+          <input type="email" matInput placeholder="Insira seu e-mail" name="enviaremail" ngModel required minlength="" />
+          <mat-error>Digite um e-mail valido</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" routerLink="/login">Enviar</button>
+      </form>
+    </mat-card-content>

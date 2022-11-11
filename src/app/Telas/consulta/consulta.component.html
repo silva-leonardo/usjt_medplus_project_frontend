@@ -31,7 +31,7 @@
   
       <mat-form-field appearance="outline">
         <mat-label>Especialidade</mat-label>
-        <select matNativeControl required name='Especialidade' (change)="handlerEspec($event)">
+        <select matNativeControl required name='Especialidade' (change)="handlerEspec($event)" placeholder="Selecione uma especialidade" >
           <option value=1>Cardiologista</option>
           <option value=2>Cirurgião</option>
           <option value=3>Psicologo</option>
@@ -45,9 +45,9 @@
   
       <mat-form-field appearance="outline">
         <mat-label>Unidade</mat-label>
-        <select matNativeControl required name='Unidade' (change)="handlerUnidade($event)">
-          <option value=01>Mooca</option>
-          <option value=02>Tatuape</option>
+        <select matNativeControl required name='Unidade' (change)="handlerUnidade($event)" placeholder="Selecione uma unidade">
+          <option value=1>Mooca</option>
+          <option value=2>Tatuape</option>
         </select>
       </mat-form-field>
   

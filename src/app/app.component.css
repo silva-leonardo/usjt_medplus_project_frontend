@@ -1,13 +1,6 @@
 body {
-    background-color: aqua;
-    min-height: 120%;
-
-    background-image: linear-gradient(
-        315deg,
-        hsl(117deg 86% 71%) 0%,
-        hsl(160deg 85% 65%) 50%,
-        hsl(203deg 82% 58%) 100%,
-    );
+    background: rgb(103,225,249);
+background: linear-gradient(166deg, rgba(103,225,249,1) 0%, rgba(255,255,255,0.4430147058823529) 48%, rgba(110,255,119,1) 100%);
 }
 
 main {

@@ -1,0 +1,19 @@
+
+<mat-card>
+    <mat-card-content class="card-login">
+      <mat-card-title>Redefinir Senha </mat-card-title>
+      <mat-card-subtitle>Insira uma nova senha</mat-card-subtitle>
+      <form #clienteForm="ngForm">
+        <br>
+        <mat-form-field appearance="outline">
+          <input type="password" matInput placeholder="Nova Senha" name="Nova-Senha" ngModel required minlength="" />
+          <mat-error>Digite uma senha valida</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <input type="password" matInput placeholder="Confirmar Senha" ngModel name="ConfirmarSenha" required />
+          <mat-error>Digite uma senha válida</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" routerLink="">Redefinir</button>
+      </form>
+    </mat-card-content>

@@ -29,6 +29,8 @@ import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verif
 import { HomepageComponent } from './Telas/homepage/homepage.component';
 import { VerificarComponent } from './Telas/verificar/verificar.component';
 import {MatList, MatListModule} from '@angular/material/list';
+import { SenhaComponent } from './Telas/senha/senha.component';
+import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import {MatList, MatListModule} from '@angular/material/list';
     NavVerificarComponent,
     HomepageComponent,
     VerificarComponent,
+    SenhaComponent,
+    EsquecisenhaComponent,
   ],
   imports: [
     BrowserModule,

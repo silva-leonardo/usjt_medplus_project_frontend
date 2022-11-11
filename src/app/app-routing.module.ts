@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './Telas/login/login.component';
@@ -10,6 +10,8 @@ import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verif
 import { NavAgendarComponent } from './Telas/navegacao/nav-agendar/nav-agendar.component';
 import { HomepageComponent } from './Telas/homepage/homepage.component';
 import { VerificarComponent } from './Telas/verificar/verificar.component';
+import { SenhaComponent } from './Telas/senha/senha.component';
+import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
 
 
 const routes: Routes = [
@@ -53,6 +55,14 @@ const routes: Routes = [
   {
     path:'verificar',
     component: VerificarComponent
+  },
+  {
+    path:'senha',
+    component: SenhaComponent
+  },
+  {
+    path:'esquecisenha',
+    component: EsquecisenhaComponent
   }
 ];
 

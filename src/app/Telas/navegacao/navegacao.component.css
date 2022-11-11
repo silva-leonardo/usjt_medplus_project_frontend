@@ -7,7 +7,7 @@
 
 #menu ul li {
     margin: 0; padding: 0px;
-    border-bottom: 3px solid #2CBC2C;
+    border-bottom: 3px solid rgb(103,225,249);;
     text-align: center;
     list-style-type: none;
     text-decoration: none;
@@ -25,7 +25,7 @@
 }
 
 #menu a:hover {
-    background:#2CBC2C;
+    background:rgb(103,225,249);;
 }
 
 a:visited {
@@ -39,3 +39,4 @@ a:hover {
 a:active {
      color: red;
 }
+
