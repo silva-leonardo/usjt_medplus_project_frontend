@@ -32,7 +32,6 @@ import {MatList, MatListModule} from '@angular/material/list';
 import { SenhaComponent } from './Telas/senha/senha.component';
 import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +64,7 @@ import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.compone
     BrowserAnimationsModule,
     MatIconModule,
     MatGridListModule,
-    MatListModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

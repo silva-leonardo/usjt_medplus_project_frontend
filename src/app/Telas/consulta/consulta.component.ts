@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, NgForm, Validators} from '@angular/forms';
 import { ClienteService } from '../cliente.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-consulta',
@@ -44,6 +45,14 @@ handlerUnidade($event: any): void {
       this.idEspecialidade,
       this.idUnidade
     )
+
+    Swal.fire({
+      title: 'Consulta agendada!',
+      text: 'Consulta agendada com sucesso!',
+      icon: 'success',
+      toast:true
+    })
+   
   }
 
 }
