@@ -14,15 +14,15 @@ export class ConsultaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  especialidade!: String;
-  unidade!: String;
+  idEspecialidade!: Number;
+  idUnidade!: Number;
 handlerEspec($event: any): void {
-    this.especialidade = $event.target.value;
-    console.log('espec:' + this.especialidade)
+    this.idEspecialidade = $event.target.value;
+    console.log('espec:' + this.idEspecialidade)
 }
 handlerUnidade($event: any): void {
-  this.unidade = $event.target.value;
-  console.log('unidade:' + this.unidade)
+  this.idUnidade = $event.target.value;
+  console.log('unidade:' + this.idUnidade)
 }
 
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -41,8 +41,8 @@ handlerUnidade($event: any): void {
       form.value.cpf,
       form.value.email,
       form.value.data,
-      this.especialidade,
-      this.unidade
+      this.idEspecialidade,
+      this.idUnidade
     )
   }
 

@@ -38,16 +38,16 @@ export class ClienteService {
       window.location.href = '/login';
     });
   }
-  agendaConsulta(nome: String, cpf: String, email: String, dataConsulta: Date, especialidade: String,unidade: String): void{
+  agendaConsulta(nome: String, cpf: String, email: String, dataConsulta: Date, idEspecialidade: Number,idUnidade: Number): void{
     const consulta = {
       nome,
       cpf,
       email,
       dataConsulta,
-      especialidade,
-      unidade
+      idEspecialidade,
+      idUnidade
     }
-    this.htppClient.post<{mensagem: String, status: Number}>('http://localhost:7000/consulta/agendar',consulta).subscribe((dados) => {
+    this.htppClient.post<{mensagem: String, status: Number}>('http://localhost:8080/consulta/agendar',consulta).subscribe((dados) => {
       alert(`consulta agendada para o dia ${consulta.dataConsulta}`);
     });
   }

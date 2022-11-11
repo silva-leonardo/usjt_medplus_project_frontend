@@ -23,7 +23,7 @@
 
       <br>
       <mat-form-field appearance="outline">
-        <input type="date" matInput placeholder="DD/MM/AAAA" ngModel name="data" required minlength="" maxlength=""/>
+        <input type="datetime-local" matInput placeholder="DD/MM/AAAA" ngModel name="data" required minlength="" maxlength=""/>
         <mat-error>Digite uma data valida</mat-error>
       </mat-form-field>
   
@@ -32,9 +32,10 @@
       <mat-form-field appearance="outline">
         <mat-label>Especialidade</mat-label>
         <select matNativeControl required name='Especialidade' (change)="handlerEspec($event)" placeholder="Selecione uma especialidade" >
+          <option value=>Selecione</option>
           <option value=1>Cardiologista</option>
           <option value=2>Cirurgião</option>
-          <option value=3>Psicologo</option>
+          <option value=3>Psicólogo</option>
           <option value=4>Oftamologista</option>
           <option value=5>Pediatra</option>
         </select>
@@ -46,6 +47,7 @@
       <mat-form-field appearance="outline">
         <mat-label>Unidade</mat-label>
         <select matNativeControl required name='Unidade' (change)="handlerUnidade($event)" placeholder="Selecione uma unidade">
+          <option value=>Selecione</option>
           <option value=1>Mooca</option>
           <option value=2>Tatuape</option>
         </select>
