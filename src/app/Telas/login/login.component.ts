@@ -15,18 +15,15 @@ export class LoginComponent implements OnInit {
   }
 
   //função 'local' de login para passar valores do form
-  onSubmit(clienteForm: NgForm){
-    console.log("CPF:" + clienteForm.value.cpf);
-    console.log("Senha:" + clienteForm.value.senha);
-    
+  onSubmit(clienteForm: NgForm) {
     this.clienteService.loginUsuario(
       clienteForm.value.cpf,
       clienteForm.value.senha
     )
   }
 
-
   ngOnInit(): void {
+    localStorage.clear();
   }
 
 }

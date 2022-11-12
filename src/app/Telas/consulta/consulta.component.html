@@ -5,30 +5,10 @@
   
     <form (submit)="consulta(clienteForm)" #clienteForm="ngForm">
       <mat-form-field appearance="outline">
-        <input type="text" matInput placeholder="Nome Completo" name="Nome" ngModel required minlength="5" />
-        <mat-error>Digite um nome valido</mat-error>
-      </mat-form-field>
-  
-      <br>
-      <mat-form-field appearance="outline">
-        <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="14" maxlength="14" />
-        <mat-error>Digite uma CPF válido</mat-error>
-      </mat-form-field>
-      <br>
-  
-      <mat-form-field appearance="outline" >
-        <input  type="email" matInput placeholder="E-mail" ngModel name="email" required  />
-        <mat-error>Digite uma E-mail válida</mat-error>
-      </mat-form-field>
-
-      <br>
-      <mat-form-field appearance="outline">
         <input type="datetime-local" matInput placeholder="DD/MM/AAAA" ngModel name="data" required minlength="" maxlength=""/>
         <mat-error>Digite uma data valida</mat-error>
       </mat-form-field>
-  
-      <br>
-  
+
       <mat-form-field appearance="outline">
         <mat-label>Especialidade</mat-label>
         <select matNativeControl required name='Especialidade' (change)="handlerEspec($event)" placeholder="Selecione uma especialidade" >
@@ -40,10 +20,7 @@
           <option value=5>Pediatra</option>
         </select>
       </mat-form-field>
-  
-  
-      <br>
-  
+
       <mat-form-field appearance="outline">
         <mat-label>Unidade</mat-label>
         <select matNativeControl required name='Unidade' (change)="handlerUnidade($event)" placeholder="Selecione uma unidade">
@@ -52,9 +29,6 @@
           <option value=2>Tatuape</option>
         </select>
       </mat-form-field>
-  
-  
-    <br>
   
     <button mat-raised-button color="primary">Confirmar Agendamento
     </button>

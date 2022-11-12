@@ -11,5 +11,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  sair() : void {
+    localStorage.clear();
+    console.log("Saindo...");
+  }
 
 }

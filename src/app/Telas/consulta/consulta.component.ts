@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, NgForm, Validators} from '@angular/forms';
+import { FormControl, NgForm, Validators } from '@angular/forms';
 import { ConsultaService } from '../consulta.service';
 import Swal from 'sweetalert2'
 
@@ -14,17 +14,27 @@ export class ConsultaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user = [];
+    this.receberUsuario();
   }
+
+  user : any;
   idEspecialidade!: Number;
   idUnidade!: Number;
-handlerEspec($event: any): void {
+
+  receberUsuario() : void {
+    this.user = JSON.parse(localStorage.getItem('User')  || '{}');
+  }
+
+  handlerEspec($event: any): void {
     this.idEspecialidade = $event.target.value;
     console.log('espec:' + this.idEspecialidade)
-}
-handlerUnidade($event: any): void {
-  this.idUnidade = $event.target.value;
-  console.log('unidade:' + this.idUnidade)
-}
+  }
+
+  handlerUnidade($event: any): void {
+    this.idUnidade = $event.target.value;
+    console.log('unidade:' + this.idUnidade)
+  }
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
@@ -36,11 +46,11 @@ handlerUnidade($event: any): void {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-  consulta(form: NgForm){
+  consulta(form: NgForm) {
     this.consultaService.agendaConsulta(
-      form.value.Nome,
-      form.value.cpf,
-      form.value.email,
+      this.user.pac_nome,
+      this.user.pac_cpf,
+      this.user.pac_email,
       form.value.data,
       this.idEspecialidade,
       this.idUnidade
@@ -50,9 +60,9 @@ handlerUnidade($event: any): void {
       title: 'Consulta agendada!',
       text: 'Consulta agendada com sucesso!',
       icon: 'success',
-      toast:true
+      toast: true
     })
-   
+
   }
 
 }

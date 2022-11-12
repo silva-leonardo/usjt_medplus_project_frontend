@@ -1,9 +1,9 @@
 <div id="menu">
     <ul>
-        <li><span>Bem vindo, <b>(nome)</b></span><p></p><span>CPF: 000.000.000-00</span></li>
+        <li><span>Bem vindo, <b>{{user.pac_nome}}</b></span><p></p><span>CPF: <b>{{user.pac_cpf}}</b></span></li>
         <li><a routerLink="/nav-agendar">Agendar Consulta</a></li>
         <li><a routerLink="/nav-verificar">Verificar Consultas</a></li>
-        <li><a routerLink="/login">Voltar a Pagina Inicial</a></li>
+        <li><a routerLink="/login" (click)="sair()">Voltar a Pagina Inicial</a></li>
         
     </ul>
 </div>

@@ -41,7 +41,8 @@ export class ClienteService {
         
         return of();
       }))
-      .subscribe((dados) => {
+      .subscribe((response:any) => {
+        localStorage.setItem('User', JSON.stringify(response));
 
         Swal.fire({
           title: 'Credenciais Válidas!',
