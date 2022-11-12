@@ -11,7 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +28,7 @@ import { NavAgendarComponent } from './Telas/navegacao/nav-agendar/nav-agendar.c
 import { NavVerificarComponent } from './Telas/navegacao/nav-verificar/nav-verificar.component';
 import { HomepageComponent } from './Telas/homepage/homepage.component';
 import { VerificarComponent } from './Telas/verificar/verificar.component';
-import {MatList, MatListModule} from '@angular/material/list';
+import { MatList, MatListModule } from '@angular/material/list';
 import { SenhaComponent } from './Telas/senha/senha.component';
 import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, NgForm, Validators} from '@angular/forms';
-import { ClienteService } from '../cliente.service';
+import { ConsultaService } from '../consulta.service';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'
 })
 export class ConsultaComponent implements OnInit {
 
-  constructor(private clienteService: ClienteService) {
+  constructor(private consultaService: ConsultaService) {
   }
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ handlerUnidade($event: any): void {
   }
 
   consulta(form: NgForm){
-    this.clienteService.agendaConsulta(
+    this.consultaService.agendaConsulta(
       form.value.Nome,
       form.value.cpf,
       form.value.email,
