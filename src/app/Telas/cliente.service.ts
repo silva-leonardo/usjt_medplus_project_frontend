@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
-import { Subject } from 'rxjs';
+import { catchError, Observable, of, Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ClienteService {
@@ -18,12 +18,24 @@ export class ClienteService {
       cpf,
       senha
     }
+
     //chamada API para realizar login
-    this.htppClient.post<{mensagem: string, status: number}>('http://localhost:5000/login',cliente).subscribe((dados) => {
-      alert(dados.mensagem + ' ' + dados.status);
-      window.location.href = '/painel';
+    this.htppClient.post<{mensagem: string, status: number}>('http://localhost:5000/login',cliente)
+    .pipe(catchError((error: any, caught: Observable<any>): Observable<any> => {
+      alert("Senha Invalida, tente novamente ou envie uma solicitação para alteração de senha");
+      console.error('There was an error!', error);
+
+      // after handling error, return a new observable 
+      // that doesn't emit any values and completes
+      return of();
+  }))
+    .subscribe((dados) => {
+      console.log(dados.mensagem);
+      alert("Logado com sucesso!");
+      window.location.href = '/navegacao';
     });
   }
+
   cadastroUsuario(nome: String, cpf: String, dataNascimento: Date, sexo: String, celular: String, email: String, senha: String): void{
     const paciente = {
       nome,

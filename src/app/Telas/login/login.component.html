@@ -2,7 +2,7 @@
   <mat-card-content class="card-login">
     <mat-card-title>Faça Login</mat-card-title>
     <mat-card-subtitle>Entre com suas credencias:</mat-card-subtitle>
-    <form (submit)="login(clienteForm)" #clienteForm="ngForm">
+    <form (ngSubmit)="onSubmit(clienteForm)" #clienteForm="ngForm">
       <mat-form-field appearance="outline">
         <input type="text" matInput placeholder="CPF" name="cpf" ngModel required minlength="14" />
         <mat-error>Digite um CPF válido</mat-error>
@@ -14,7 +14,7 @@
       </mat-form-field>
     <p></p><span class="spacer"></span>
      <a routerLink="/esquecisenha" class="posicaosenha"> Esqueci a Senha</a> 
-      <button mat-raised-button color="primary" routerLink="/navegacao">Entrar</button>
+      <button mat-raised-button color="primary">Entrar</button>
     </form>
   </mat-card-content>
   <mat-divider></mat-divider>
