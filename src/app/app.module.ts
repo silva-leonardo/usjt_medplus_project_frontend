@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card';
@@ -55,6 +55,7 @@ import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.compone
     RouterLink,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
     MatExpansionModule,

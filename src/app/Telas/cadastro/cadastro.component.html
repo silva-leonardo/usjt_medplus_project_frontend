@@ -1,14 +1,15 @@
 <mat-card>
   <h1><b>CADASTRO</b></h1>
 
-  <form (submit)="cadastro(clienteForm)" #clienteForm="ngForm">
+  <form  #clienteForm="ngForm" (submit)="cadastro(clienteForm)">
     <mat-form-field appearance="outline">
       <input type="text" matInput placeholder="Nome Completo" name="Nome" ngModel required minlength="10" />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="14" maxlength="14" />
-      <mat-error>Digite uma CPF válido</mat-error>
+      <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="14" maxlength="14" (change)="validarCPF(clienteForm)"
+      />
+      <mat-error *ngIf="(CPFValido == false)">Digite uma CPF válido. ex: 000.000.000-00</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
@@ -33,20 +34,41 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="data_nascimento">
-      <input type="date" matInput placeholder="Data de Nascimento" ngModel name="datanasc" required required minlength="" maxlength=""/>
+      <input type="date" matInput placeholder="Data de Nascimento" ngModel name="datanasc" required/>
       <mat-error>Digite uma data de nascimento válido</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="senha">
-      <input type="password" matInput placeholder="Senha" ngModel name="senha" required required minlength="8" maxlength="15" />
+      <input 
+      type="password" 
+      matInput 
+      placeholder="Senha" 
+      ngModel 
+      name="senha" 
+      required
+      minlength="8" 
+      maxlength="15"
+      (change)="validarSenha(clienteForm)"
+      />
+      <mat-error *ngIf="(senhasValidadas == false)" >Senhas diferentes!</mat-error>
       <mat-error>Digite uma senha válida</mat-error>
     </mat-form-field>
  
     <mat-form-field appearance="outline" class="senha">
-      <input type="password" matInput placeholder="Confirmar Senha" ngModel name="confirm.senha" required required minlength="8" maxlength="15"/>
-      <mat-error>Senhas diferentes!</mat-error>
+      <input 
+      type="password" 
+      matInput 
+      placeholder="Confirmar Senha" 
+      ngModel 
+      name="senha2" 
+      required 
+      minlength="8" 
+      maxlength="15"
+      (change)="validarSenha(clienteForm)"
+      />
+      <mat-error *ngIf="(senhasValidadas == false)">Senhas diferentes!</mat-error>
     </mat-form-field>
 
-  <button mat-raised-button color="primary">Confirmar Cadastro</button>
+  <button mat-raised-button color="primary" [disabled]="clienteForm.invalid">Confirmar Cadastro</button>
 </form>
 </mat-card>
