@@ -13,9 +13,12 @@ export class ConsultaComponent implements OnInit {
   constructor(private consultaService: ConsultaService) {
   }
 
+  consultasRecebidas : any;
+
   ngOnInit(): void {
     this.user = [];
     this.receberUsuario();
+    this.consultasRecebidas = this.consultaService.validarConsultas(this.user.pac_id);
   }
 
   user : any;
@@ -61,6 +64,8 @@ export class ConsultaComponent implements OnInit {
       text: 'Consulta agendada com sucesso!',
       icon: 'success',
       toast: true
+    }).then((result) => {
+      this.ngOnInit();
     })
 
   }

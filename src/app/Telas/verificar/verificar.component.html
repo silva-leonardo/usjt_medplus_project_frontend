@@ -1,13 +1,19 @@
 <mat-card>
-    <h1><b>Consultas</b></h1>
+    <h1><b>Consultas Agendadas</b></h1>
     <br>
-    <mat-list role="list" *ngFor="let consulta of consultas">
-        <mat-list-item role="listitem">
-            <span class="campos">Especialidade: {{consulta.especialidade}}</span>
+    <mat-list *ngIf="consultasRecebidas.length > 0">
+        <mat-list-item *ngFor="let consultasRecebida of consultasRecebidas">
+            <span class="campos">Especialidade: {{consultasRecebida.esp_especialidade}}</span>
             <span class="spacer"></span>
-            <span class="campos">Data Agendada: {{consulta.data}}</span>
-            <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="edit"></mat-icon>
-            <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="delete">
-            </mat-icon>
+            <span class="campos">Data Agendada: {{consultasRecebida.cons_dthr}}</span>
+            <button mat-icon-button aria-label="login icon">
+                <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="edit"></mat-icon>
+            </button>
+            <button mat-icon-button aria-label="login icon" (click)="deletarConsulta(consultasRecebida.cons_id)">
+                <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="delete"></mat-icon>
+            </button>
         </mat-list-item>
     </mat-list>
+    <p class="mat-body-1" style="text-align: center;" *ngIf="consultasRecebidas.length <= 0">
+        Nenhuma consulta agendada. Acesse o agendamento de consultas no menu ao lado.
+    </p>

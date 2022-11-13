@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { ConsultaService } from '../consulta.service';
 
 @Component({
   selector: 'app-navegacao',
@@ -12,12 +13,12 @@ export class NavegacaoComponent implements OnInit {
 
   user: any;
 
-  constructor() { }
+  constructor(private consultaService: ConsultaService) { }
 
   ngOnInit(): void {
     this.user = [];
     this.receberUsuario()
-
+    this.consultaService.validarConsultas(this.user.pac_id);
   }
 
   receberUsuario(): void {

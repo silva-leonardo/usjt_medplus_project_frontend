@@ -3,8 +3,8 @@ import { Injectable } from "@angular/core";
 
 import { environment } from 'src/environments/environment';
 
-@Injectable({ 
-  providedIn: 'root' 
+@Injectable({
+  providedIn: 'root'
 })
 
 export class ConsultaService {
@@ -26,15 +26,26 @@ export class ConsultaService {
       idEspecialidade,
       idUnidade
     }
-    this.htppClient.post<{ mensagem: String, status: Number }>(this.API+'consulta/agendar', consulta).subscribe((dados) => {
+    this.htppClient.post<{ mensagem: String, status: Number }>(this.API + 'consulta/agendar', consulta).subscribe((dados) => {
       alert(`consulta agendada para o dia ${consulta.dataConsulta}`);
     });
   }
 
-  validarConsultas(){
-    this.htppClient.get(this.API+'consultas')
-    .subscribe((response:any) => {
-      console.log(JSON.stringify(response));
-    })  
+  validarConsultas(id: String) {
+    //instanciando e recebendo valores do usuario
+    const consulta = {
+      id
+    }
+
+    this.htppClient.post(this.API + 'consultas/usuario', consulta)
+      .subscribe((response: any) => {
+        localStorage.setItem('Consultas', JSON.stringify(response));
+      })
+  }
+
+  removerConsulta(id: number) {
+    this.htppClient.delete(this.API + 'consulta/cancelar/'+ id).subscribe(() => {
+      console.log(`Consulta removida`);
+    });
   }
 }
