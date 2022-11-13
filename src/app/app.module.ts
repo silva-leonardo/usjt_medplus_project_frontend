@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 
+import { NgxMaskModule} from 'ngx-mask'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -65,7 +66,8 @@ import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.compone
     BrowserAnimationsModule,
     MatIconModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

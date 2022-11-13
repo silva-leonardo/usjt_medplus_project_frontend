@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../cliente.service';
 import { NgForm } from '@angular/forms';
-import { FocusMonitor } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
+
 export class CadastroComponent implements OnInit {
 
   senhasValidadas: boolean = false;
-  CPFValido: boolean = false;
 
   constructor(private clienteService: ClienteService) {
   }
@@ -24,8 +23,10 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastro(form: NgForm) {
+
+    console.log(typeof(this.selected))
     //executa o método de login no Service passando os valores
-    /* this.clienteService.cadastroUsuario(
+    this.clienteService.cadastroUsuario(
       form.value.Nome,
       form.value.cpf,
       form.value.datanasc,
@@ -33,7 +34,7 @@ export class CadastroComponent implements OnInit {
       form.value.tell,
       form.value.email,
       form.value.senha,
-    ) */
+    )
     //reseta o form após executar
     form.resetForm();
   }
@@ -52,34 +53,6 @@ export class CadastroComponent implements OnInit {
     }
   }
 
-  validarCPF(form: NgForm) {
-
-    var cpf = form.value.cpf;
-    var resultado = cpf.indexOf(".");
-    console.log(cpf.chart(3)+" primeiro ponto")
-    console.log(cpf.chart(6)+" segundo ponto")
-    console.log(cpf.chart(9)+"menos")
-
-
-    if(cpf.length == 14){
-      if(resultado == 3 ){
-        console.log("fase 1 ok")
-        if(resultado == 6 ){
-          console.log("fase 2 ok")
-          if(resultado == 9 ){
-            console.log("fase 3 ok")
-            var resultado = cpf.indexOf("-");
-            if(resultado == 12){
-              console.log("fase 4 ok")
-            }
-          }
-        }
-      }
-  
-    }
-  }
-
-  
   ngOnInit(): void {
   }
 

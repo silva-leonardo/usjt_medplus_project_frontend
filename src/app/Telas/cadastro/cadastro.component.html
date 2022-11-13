@@ -1,5 +1,5 @@
 <mat-card>
-  <h1><b>CADASTRO</b></h1>
+  <h1><b>Cadastre-se</b></h1>
 
   <form  #clienteForm="ngForm" (submit)="cadastro(clienteForm)">
     <mat-form-field appearance="outline">
@@ -7,19 +7,17 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <input type="text" matInput placeholder="CPF" ngModel name="cpf" required minlength="14" maxlength="14" (change)="validarCPF(clienteForm)"
-      />
-      <mat-error *ngIf="(CPFValido == false)">Digite uma CPF válido. ex: 000.000.000-00</mat-error>
+      <input type="text" matInput placeholder="CPF" ngModel mask="000.000.000-00" name="cpf" required/>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <input type="email" matInput placeholder="E-mail" ngModel name="email" required  />
+      <input type="email" matInput placeholder="E-mail" ngModel name="email" required/>
       
       <mat-error>Digite uma E-mail válida</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <input type="tel" matInput placeholder="Telefone" ngModel name="tell" required minlength="11" maxlength="11"/>
+      <input type="tel" matInput placeholder="Telefone" ngModel name="tell" prefix="+55" mask=" (00) 00000-0000" required/>
       <mat-error>Digite um Telefone válido</mat-error>
     </mat-form-field>
 
