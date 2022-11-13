@@ -10,6 +10,7 @@ export class HomepageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    localStorage.clear();
   }
 
 }

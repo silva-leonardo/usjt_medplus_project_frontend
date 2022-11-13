@@ -12,6 +12,7 @@ import { HomepageComponent } from './Telas/homepage/homepage.component';
 import { VerificarComponent } from './Telas/verificar/verificar.component';
 import { SenhaComponent } from './Telas/senha/senha.component';
 import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
+import { UsuarioAutenticadoGuard } from './Telas/guardas/usuario-autenticado.guard';
 
 
 const routes: Routes = [
@@ -38,23 +39,28 @@ const routes: Routes = [
   },
   {
     path:'navegacao',
-    component: NavegacaoComponent
+    component: NavegacaoComponent,
+    canActivate: [UsuarioAutenticadoGuard]
   },
   {
     path:'consulta',
-    component: ConsultaComponent
+    component: ConsultaComponent,
+    canActivate: [UsuarioAutenticadoGuard]
   },
   {
     path:'nav-agendar',
-    component: NavAgendarComponent
+    component: NavAgendarComponent,
+    canActivate: [UsuarioAutenticadoGuard]
   },
   {
     path:'nav-verificar',
-    component: NavVerificarComponent
+    component: NavVerificarComponent,
+    canActivate: [UsuarioAutenticadoGuard]
   },
   {
     path:'verificar',
-    component: VerificarComponent
+    component: VerificarComponent,
+    canActivate: [UsuarioAutenticadoGuard]
   },
   {
     path:'senha',
