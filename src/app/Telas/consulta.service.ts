@@ -30,4 +30,11 @@ export class ConsultaService {
       alert(`consulta agendada para o dia ${consulta.dataConsulta}`);
     });
   }
+
+  validarConsultas(){
+    this.htppClient.get(this.API+'consultas')
+    .subscribe((response:any) => {
+      console.log(JSON.stringify(response));
+    })  
+  }
 }
