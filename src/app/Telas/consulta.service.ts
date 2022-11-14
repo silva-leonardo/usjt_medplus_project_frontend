@@ -44,16 +44,12 @@ export class ConsultaService {
         this.htppClient.post(this.API + 'consultas/usuario', consulta).subscribe((response: any) => {
           resolve(response);
         })
-      }, 100)
+      }, 250)
     })
-    //this.htppClient.post(this.API + 'consultas/usuario', consulta).subscribe((response: any) => {
-    //    console.log("Consultas recebidas da API: ESTOU NO SERVICE: " + 'Consultas', JSON.stringify(response));
-    //    localStorage.setItem('Consultas', JSON.stringify(response));
-    //  })
   }
 
   removerConsulta(id: number) {
-    this.htppClient.delete(this.API + 'consulta/cancelar/'+ id).subscribe(() => {
+    this.htppClient.delete(this.API + 'consulta/cancelar/'+ id).subscribe((response: any) => {
       console.log(`Consulta removida`);
     });
   }

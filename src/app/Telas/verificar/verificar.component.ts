@@ -27,8 +27,15 @@ export class VerificarComponent implements OnInit {
     console.log(this.consultas);
   }
 
-  deletarConsulta (id: number): void{
+  deletarConsulta (id: number, Especialidade: string, endereco: string, unidade: string): void{
     this.consultaService.removerConsulta(id);
-    window.location.href = '/nav-verificar'
+
+    Swal.fire({
+      title: 'Consulta Excluída com Sucesso!',
+      text: `Sua cosulta na ${endereco},${unidade}, de especialidade ${Especialidade} foi cancelada.`,
+      icon: 'success',
+    }).then((result) => {
+      window.location.reload();
+      })
     }
 }
