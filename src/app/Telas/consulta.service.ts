@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 
 import { environment } from 'src/environments/environment';
+import { Consulta } from './Consulta';
 
 @Injectable({
   providedIn: 'root'
@@ -31,16 +32,24 @@ export class ConsultaService {
     });
   }
 
-  validarConsultas(id: String) {
+  validarConsultas(id: String): Promise<Consulta[]>{
+    
     //instanciando e recebendo valores do usuario
     const consulta = {
       id
     }
 
-    this.htppClient.post(this.API + 'consultas/usuario', consulta)
-      .subscribe((response: any) => {
-        localStorage.setItem('Consultas', JSON.stringify(response));
-      })
+    return new Promise((resolve)=> {
+      setTimeout(() => {
+        this.htppClient.post(this.API + 'consultas/usuario', consulta).subscribe((response: any) => {
+          resolve(response);
+        })
+      }, 100)
+    })
+    //this.htppClient.post(this.API + 'consultas/usuario', consulta).subscribe((response: any) => {
+    //    console.log("Consultas recebidas da API: ESTOU NO SERVICE: " + 'Consultas', JSON.stringify(response));
+    //    localStorage.setItem('Consultas', JSON.stringify(response));
+    //  })
   }
 
   removerConsulta(id: number) {

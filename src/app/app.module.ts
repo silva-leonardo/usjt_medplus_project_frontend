@@ -32,6 +32,7 @@ import { VerificarComponent } from './Telas/verificar/verificar.component';
 import { MatList, MatListModule } from '@angular/material/list';
 import { SenhaComponent } from './Telas/senha/senha.component';
 import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
+import { ControlaConsultasResolver } from './Telas/verificar/guarda/controla-consultas.resolver';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.compone
     MatListModule,
     NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [ControlaConsultasResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

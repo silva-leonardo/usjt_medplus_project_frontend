@@ -13,12 +13,11 @@ export class NavegacaoComponent implements OnInit {
 
   user: any;
 
-  constructor(private consultaService: ConsultaService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.user = [];
-    this.receberUsuario()
-    this.consultaService.validarConsultas(this.user.pac_id);
+    this.receberUsuario();
   }
 
   receberUsuario(): void {

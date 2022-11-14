@@ -7,7 +7,18 @@
     <title>Inicial</title>
 </head>
 <body class="body">
-    <app-header></app-header>
+    <div *ngIf='loading' id="myModal" class="modal">
+        <div class="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>    <app-header></app-header>
     <main>
     <router-outlet></router-outlet>
     </main>

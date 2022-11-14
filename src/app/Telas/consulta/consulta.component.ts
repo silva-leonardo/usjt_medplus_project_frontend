@@ -13,12 +13,9 @@ export class ConsultaComponent implements OnInit {
   constructor(private consultaService: ConsultaService) {
   }
 
-  consultasRecebidas : any;
-
   ngOnInit(): void {
     this.user = [];
     this.receberUsuario();
-    this.consultasRecebidas = this.consultaService.validarConsultas(this.user.pac_id);
   }
 
   user : any;
@@ -49,6 +46,11 @@ export class ConsultaComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
+  receberConsultas(): void {
+    this.consultaService.validarConsultas(this.user.pac_id);
+    console.log('Recebendo Consultas no componente de consulta');
+  }
+
   consulta(form: NgForm) {
     this.consultaService.agendaConsulta(
       this.user.pac_nome,
@@ -65,10 +67,9 @@ export class ConsultaComponent implements OnInit {
       icon: 'success',
       toast: true
     }).then((result) => {
+      this.receberConsultas()
       this.ngOnInit();
     })
-
   }
-
 }
 

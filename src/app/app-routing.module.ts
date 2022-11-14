@@ -13,6 +13,7 @@ import { VerificarComponent } from './Telas/verificar/verificar.component';
 import { SenhaComponent } from './Telas/senha/senha.component';
 import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
 import { UsuarioAutenticadoGuard } from './Telas/guardas/usuario-autenticado.guard';
+import { ControlaConsultasResolver } from './Telas/verificar/guarda/controla-consultas.resolver';
 
 
 const routes: Routes = [
@@ -55,12 +56,13 @@ const routes: Routes = [
   {
     path:'nav-verificar',
     component: NavVerificarComponent,
-    canActivate: [UsuarioAutenticadoGuard]
+    canActivate: [UsuarioAutenticadoGuard],
+    resolve: { consultas : ControlaConsultasResolver}
   },
   {
     path:'verificar',
     component: VerificarComponent,
-    canActivate: [UsuarioAutenticadoGuard]
+    canActivate: [UsuarioAutenticadoGuard],
   },
   {
     path:'senha',

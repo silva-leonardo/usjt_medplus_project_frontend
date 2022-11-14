@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { ConsultaService } from '../consulta.service';
+import { Consulta } from '../Consulta';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -9,43 +11,24 @@ import { ConsultaService } from '../consulta.service';
   styleUrls: ['./verificar.component.css']
 })
 export class VerificarComponent implements OnInit {
+  consultas: Consulta[];
 
-  constructor(private consultaService: ConsultaService) { }
+  constructor(
+    private consultaService: ConsultaService,
+    private route: ActivatedRoute
+    ) { 
+      this.consultas = this.route.snapshot.data['consultas'];
+    }
 
   user : any;
-  consultasRecebidas : any;
 
   ngOnInit(): void {
-    this.user = [];
-    this.consultasRecebidas = [];
 
-    this.receberUsuario()
-    
-    this.consultasRecebidas = this.consultaService.validarConsultas(this.user.pac_id);
-
-    this.receberConsultas();
-
-    console.log(this.consultasRecebidas);
-  }
-
-  receberUsuario(): void {
-    this.user = JSON.parse(localStorage.getItem('User') || '{}');
-  }
-
-  receberConsultas(): void {
-    this.consultasRecebidas = JSON.parse(localStorage.getItem('Consultas') || '{}');
+    console.log(this.consultas);
   }
 
   deletarConsulta (id: number): void{
     this.consultaService.removerConsulta(id);
-
-    Swal.fire({
-      title: 'Consulta Excluída!',
-      text: 'Consulta excluída com sucesso!',
-      icon: 'success',
-      toast: true
-    }).then((result) => {
-      window.location.href = '/nav-verificar';
-    })
+    window.location.href = '/nav-verificar'
     }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsultaService } from '../../consulta.service';
 
 @Component({
   selector: 'app-nav-verificar',
