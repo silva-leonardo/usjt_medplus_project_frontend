@@ -5,7 +5,7 @@
         <mat-list-item *ngFor="let consulta of consultas">
             <span class="campos">Especialidade: {{consulta.esp_especialidade}} | {{consulta.und_unidade}}</span>
             <span class="spacer"></span>
-            <span class="campos">Data Agendada: {{consulta.cons_dthr}}</span>
+            <span class="campos">Data Agendada: {{consulta.cons_dthr | date :'short'}}</span>
             <button mat-icon-button aria-label="login icon" (click)="editarConsulta(consulta.cons_id)">
                 <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="edit"></mat-icon>
             </button>

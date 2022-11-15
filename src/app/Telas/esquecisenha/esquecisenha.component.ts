@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-esquecisenha',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EsquecisenhaComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private clienteService: ClienteService) { 
+    
+  }
   ngOnInit(): void {
   }
-
+  atualizaSenha(form: NgForm){
+    this.clienteService.redefinirSenha(
+      form.value.cpf, 
+      form.value.senha)
+  }
 }

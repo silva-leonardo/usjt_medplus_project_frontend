@@ -69,4 +69,30 @@ export class ClienteService {
       window.location.href = '/login';
     });
   }
+
+  redefinirSenha(cpfUser: String, senha: String): void{
+    const Senha ={
+      senha
+    }
+    this.htppClient.put(this.API+`redefinir/senha/usuario/${cpfUser}`,Senha)
+    .pipe(catchError((error: any, caught: Observable<any>): Observable<any> =>{
+    Swal.fire({
+      title: 'Não te encontramos ! :(',
+      text: 'O CPF digitado não esta cadastrado na MedPlus',
+      icon: 'error',
+      toast:true,
+    })
+    return of();
+  }))
+    .subscribe((dados:any) => {
+      Swal.fire({
+        title: 'Senha alterada !',
+        text: 'Entre com sua nova senha',
+        icon: 'success',
+      }).then((result) => {
+        window.location.href = '/login';
+      })
+
+    });
+  }
 }

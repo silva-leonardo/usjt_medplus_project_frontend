@@ -1,13 +1,24 @@
 <mat-card>
     <mat-card-content class="card-login">
       <mat-card-title>Encontre sua conta</mat-card-title>
-      <form #clienteForm="ngForm">
+      <form #redefinirSenha="ngForm" (submit)="atualizaSenha(redefinirSenha)">
         <br>
-        <p>Insira seu email de recuperação, para redefinir sua senha.</p>
+        <p>Insira seu CPF para redefinir sua senha.</p>
         <mat-form-field appearance="outline">
-          <input type="email" matInput placeholder="Insira seu e-mail" name="enviaremail" ngModel required minlength="" />
-          <mat-error>Digite um e-mail valido</mat-error>
+          <input type="text" matInput placeholder="CPF" ngModel mask="000.000.000-00" name="cpf" required/>
         </mat-form-field>
-        <button mat-raised-button color="primary" routerLink="/login">Enviar</button>
+        <mat-form-field appearance="outline" class="senha">
+          <input 
+          type="password" 
+          matInput 
+          placeholder="Nova Senha" 
+          ngModel 
+          name="senha" 
+          required
+          minlength="8" 
+          maxlength="15"
+          />
+        </mat-form-field>
+        <button mat-raised-button color="primary">Enviar</button>
       </form>
     </mat-card-content>
