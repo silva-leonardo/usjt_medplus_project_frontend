@@ -32,14 +32,13 @@ export class ConsultaService {
     });
   }
 
-  validarConsultas(id: String): Promise<Consulta[]>{
-    
+  validarConsultas(id: String): Promise<Consulta[]> {
     //instanciando e recebendo valores do usuario
     const consulta = {
       id
     }
 
-    return new Promise((resolve)=> {
+    return new Promise((resolve) => {
       setTimeout(() => {
         this.htppClient.post(this.API + 'consultas/usuario', consulta).subscribe((response: any) => {
           resolve(response);
@@ -48,8 +47,33 @@ export class ConsultaService {
     })
   }
 
+  validaConsultaId(id: String): Promise<Consulta[]> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        this.htppClient.get(this.API + 'consulta/' + id).subscribe((response: any) => {
+          localStorage.setItem('ConsultaRecebida', JSON.stringify(response))
+          resolve(response);
+        })
+      }, 50)
+    })
+  }
+
+  editaConsulta(id: String, dataConsulta: Date, idUnidade: Number): void {
+
+    const consulta = {
+      dataConsulta,
+      idUnidade
+    }
+
+    this.htppClient.put(this.API + 'consulta/reagendamento/' + id, consulta).subscribe((response: any) => {
+      console.log(response);
+      return response;
+    })
+
+  }
+
   removerConsulta(id: number) {
-    this.htppClient.delete(this.API + 'consulta/cancelar/'+ id).subscribe((response: any) => {
+    this.htppClient.delete(this.API + 'consulta/cancelar/' + id).subscribe((response: any) => {
       console.log(`Consulta removida`);
     });
   }

@@ -5,7 +5,7 @@ import { ConsultaService } from "../../consulta.service";
 import { Consulta } from "../../Consulta";
 
 @Injectable({ providedIn: 'root' })
-export class ControlaConsultasResolver implements Resolve<Consulta[]> {
+export class RecebeIdConsultaResolver implements Resolve<Consulta[]> {
   
   constructor(private consultaService: ConsultaService) {}
 
@@ -14,10 +14,7 @@ export class ControlaConsultasResolver implements Resolve<Consulta[]> {
     state: RouterStateSnapshot
   ): Observable<Consulta[]>|Promise<Consulta[]>|Consulta[] {
     
-    let user = JSON.parse(localStorage.getItem('User') || '[]');
-    console.log("Estou no resolver!")
-    console.log(this.consultaService.validarConsultas(user.pac_id))
-    console.log(user.pac_id)
-    return this.consultaService.validarConsultas(user.pac_id);
+    let id = JSON.parse(localStorage.getItem('consultaParaEditar') || '[]');
+    return this.consultaService.validaConsultaId(id);
   }
 }

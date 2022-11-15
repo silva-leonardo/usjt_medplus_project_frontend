@@ -14,6 +14,9 @@ import { SenhaComponent } from './Telas/senha/senha.component';
 import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
 import { UsuarioAutenticadoGuard } from './Telas/guardas/usuario-autenticado.guard';
 import { ControlaConsultasResolver } from './Telas/verificar/guarda/controla-consultas.resolver';
+import { EditarComponent } from './Telas/editar/editar.component';
+import { NavEditarComponent } from './Telas/navegacao/nav-editar/nav-editar.component';
+import { RecebeIdConsultaResolver } from './Telas/editar/guarda/recebe-idconsulta.resolver';
 
 
 const routes: Routes = [
@@ -66,11 +69,18 @@ const routes: Routes = [
   },
   {
     path:'senha',
-    component: SenhaComponent
+    component: SenhaComponent,
+    canActivate: [UsuarioAutenticadoGuard],
   },
   {
     path:'esquecisenha',
     component: EsquecisenhaComponent
+  },
+  {
+    path:'nav-editar',
+    component: NavEditarComponent,
+    canActivate: [UsuarioAutenticadoGuard],
+    resolve: { consultas : RecebeIdConsultaResolver}
   }
 ];
 

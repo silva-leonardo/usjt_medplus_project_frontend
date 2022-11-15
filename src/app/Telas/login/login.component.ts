@@ -16,8 +16,17 @@ export class LoginComponent implements OnInit {
 
   //função 'local' de login para passar valores do form
   onSubmit(clienteForm: NgForm) {
+
+    //transforma o CPF
+    var ao_cpf = clienteForm.value.cpf;
+    ao_cpf = ao_cpf.replace(/(\d{3})(\d)/, "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+    ao_cpf = ao_cpf.replace(/(\d{3})(\d)/, "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+    ao_cpf = ao_cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); //Coloca um hífen entre o terceiro e o quarto dígitos
+
+    console.log(ao_cpf);
+
     this.clienteService.loginUsuario(
-      clienteForm.value.cpf,
+      ao_cpf,
       clienteForm.value.senha
     )
   }

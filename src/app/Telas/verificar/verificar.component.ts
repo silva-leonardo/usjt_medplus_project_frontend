@@ -16,18 +16,23 @@ export class VerificarComponent implements OnInit {
   constructor(
     private consultaService: ConsultaService,
     private route: ActivatedRoute
-    ) { 
-      this.consultas = this.route.snapshot.data['consultas'];
-    }
+  ) {
+    this.consultas = this.route.snapshot.data['consultas'];
+  }
 
-  user : any;
+  user: any;
 
   ngOnInit(): void {
 
     console.log(this.consultas);
   }
 
-  deletarConsulta (id: number, Especialidade: string, endereco: string, unidade: string): void{
+  editarConsulta(id: number): void{
+    localStorage.setItem('consultaParaEditar', JSON.stringify(id));
+    window.location.href = '/nav-editar';
+  }
+
+  deletarConsulta(id: number, Especialidade: string, endereco: string, unidade: string): void {
     this.consultaService.removerConsulta(id);
 
     Swal.fire({
@@ -36,6 +41,6 @@ export class VerificarComponent implements OnInit {
       icon: 'success',
     }).then((result) => {
       window.location.reload();
-      })
-    }
+    })
+  }
 }

@@ -24,11 +24,17 @@ export class CadastroComponent implements OnInit {
 
   cadastro(form: NgForm) {
 
+    //transforma o CPF
+    var ao_cpf= form.value.cpf; 
+    ao_cpf = ao_cpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+    ao_cpf = ao_cpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+    ao_cpf = ao_cpf.replace( /(\d{3})(\d{1,2})$/ , "$1-$2"); //Coloca um hífen entre o terceiro e o quarto dígitos
+         
     console.log(typeof(this.selected))
     //executa o método de login no Service passando os valores
     this.clienteService.cadastroUsuario(
       form.value.Nome,
-      form.value.cpf,
+      ao_cpf,
       form.value.datanasc,
       this.selected,
       form.value.tell,

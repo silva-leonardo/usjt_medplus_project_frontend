@@ -33,6 +33,9 @@ import { MatList, MatListModule } from '@angular/material/list';
 import { SenhaComponent } from './Telas/senha/senha.component';
 import { EsquecisenhaComponent } from './Telas/esquecisenha/esquecisenha.component';
 import { ControlaConsultasResolver } from './Telas/verificar/guarda/controla-consultas.resolver';
+import { NavEditarComponent } from './Telas/navegacao/nav-editar/nav-editar.component';
+import { EditarComponent } from './Telas/editar/editar.component';
+import { RecebeIdConsultaResolver } from './Telas/editar/guarda/recebe-idconsulta.resolver';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,8 @@ import { ControlaConsultasResolver } from './Telas/verificar/guarda/controla-con
     VerificarComponent,
     SenhaComponent,
     EsquecisenhaComponent,
+    NavEditarComponent,
+    EditarComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,7 @@ import { ControlaConsultasResolver } from './Telas/verificar/guarda/controla-con
     MatListModule,
     NgxMaskModule.forRoot()
   ],
-  providers: [ControlaConsultasResolver],
+  providers: [ControlaConsultasResolver,RecebeIdConsultaResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

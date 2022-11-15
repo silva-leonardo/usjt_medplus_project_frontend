@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-title>
+    <h1><b>Reagendamento de Consulta</b></h1>
+  </mat-card-title>
+
+  <mat-card-content>
+    <b>Dados da consulta:</b>
+    <ul>
+      <li>Data Agendada: {{data}}</li>
+      <li>Especialidade Escolhida: {{espec}}</li>
+      <li>Unidade Escolhida: {{unidade}}</li>
+    </ul>
+  </mat-card-content>
+  <p>
+    <b>Incira os dados nos campos abaixo para reagendar sua consulta:</b>
+  </p>
+  <form (ngSubmit)="onSubmit(clienteForm)" #clienteForm="ngForm">
+    <mat-form-field appearance="outline">
+      <input type="datetime-local" matInput placeholder="DD/MM/AAAA" ngModel name="data" required minlength=""
+        maxlength="" />
+      <mat-error>Digite uma data valida</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Unidade</mat-label>
+      <select matNativeControl required name='Unidade' (change)="handlerUnidade($event)"
+        placeholder="Selecione uma unidade">
+        <option value=>Selecione<option>
+        <option value=1>Mooca</option>
+        <option value=2>Tatuape</option>
+      </select>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Confirmar Reagendamento</button>
+  </form>
+</mat-card>
