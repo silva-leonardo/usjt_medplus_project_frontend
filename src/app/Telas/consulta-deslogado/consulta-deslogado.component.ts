@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, NgForm, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { ConsultaService } from '../consulta.service';
-import Swal from 'sweetalert2'
 
 @Component({
-  selector: 'app-consulta',
-  templateUrl: './consulta.component.html',
-  styleUrls: ['./consulta.component.css']
+  selector: 'app-consulta-deslogado',
+  templateUrl: './consulta-deslogado.component.html',
+  styleUrls: ['./consulta-deslogado.component.css']
 })
-export class ConsultaComponent implements OnInit {
+export class ConsultaDeslogadoComponent implements OnInit {
 
   constructor(private consultaService: ConsultaService) {
   }
-
+ 
   ngOnInit(): void {
     this.user = [];
     this.receberUsuario();
-    this.usuarioLogado = true;
+    this.usuarioLogado = false;
   }
 
   user : any;
@@ -54,10 +54,18 @@ export class ConsultaComponent implements OnInit {
   }
 
   consulta(form: NgForm) {
-    this.consultaService.agendaConsultaLogado(
-      this.user.pac_nome,
-      this.user.pac_cpf,
-      this.user.pac_email,
+
+     //transforma o CPF
+     var ao_cpf= form.value.cpf; 
+     ao_cpf = ao_cpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+     ao_cpf = ao_cpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+     ao_cpf = ao_cpf.replace( /(\d{3})(\d{1,2})$/ , "$1-$2"); //Coloca um hífen entre o terceiro e o quarto dígitos
+          
+
+    this.consultaService.agendaConsultaDeslogado(
+      form.value.nome,
+      ao_cpf,
+      form.value.email,
       form.value.data,
       this.idEspecialidade,
       this.idUnidade,
@@ -66,7 +74,7 @@ export class ConsultaComponent implements OnInit {
 
     Swal.fire({
       title: 'Consulta agendada!',
-      text: 'Consulta agendada com sucesso!',
+      text: `Verifique o seu email:${form.value.email} para acessar os dados da sua consulta`,
       icon: 'success',
       toast: true
     }).then((result) => {
@@ -75,4 +83,3 @@ export class ConsultaComponent implements OnInit {
     })
   }
 }
-

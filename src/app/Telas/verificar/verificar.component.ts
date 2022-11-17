@@ -37,7 +37,7 @@ export class VerificarComponent implements OnInit {
 
     Swal.fire({
       title: 'Consulta Excluída com Sucesso!',
-      text: `Sua cosulta na ${endereco},${unidade}, de especialidade ${Especialidade} foi cancelada.`,
+      text: `Sua consulta na ${endereco},${unidade}, de especialidade ${Especialidade} foi cancelada.`,
       icon: 'success',
     }).then((result) => {
       window.location.reload();

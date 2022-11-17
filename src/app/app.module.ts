@@ -36,6 +36,7 @@ import { ControlaConsultasResolver } from './Telas/verificar/guarda/controla-con
 import { NavEditarComponent } from './Telas/navegacao/nav-editar/nav-editar.component';
 import { EditarComponent } from './Telas/editar/editar.component';
 import { RecebeIdConsultaResolver } from './Telas/editar/guarda/recebe-idconsulta.resolver';
+import { ConsultaDeslogadoComponent } from './Telas/consulta-deslogado/consulta-deslogado.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { RecebeIdConsultaResolver } from './Telas/editar/guarda/recebe-idconsult
     EsquecisenhaComponent,
     NavEditarComponent,
     EditarComponent,
+    ConsultaDeslogadoComponent,
   ],
   imports: [
     BrowserModule,

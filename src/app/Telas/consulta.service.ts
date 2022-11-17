@@ -18,15 +18,40 @@ export class ConsultaService {
   ngOnInit(): void {
   }
 
-  agendaConsulta(nome: String, cpf: String, email: String, dataConsulta: Date, idEspecialidade: Number, idUnidade: Number): void {
+  agendaConsultaLogado(nome: String, cpf: String, email: String, dataConsulta: Date, idEspecialidade: Number, idUnidade: Number, usuarioLogado: Boolean): void {
+    
+    let user = JSON.parse(localStorage.getItem('User') || '[]');
+    var idPaciente = user.pac_id;
+
     const consulta = {
       nome,
       cpf,
       email,
       dataConsulta,
       idEspecialidade,
-      idUnidade
+      idUnidade,
+      usuarioLogado,
+      idPaciente
     }
+
+    console.log(consulta)
+    this.htppClient.post<{ mensagem: String, status: Number }>(this.API + 'consulta/agendar', consulta).subscribe((dados) => {
+      alert(`consulta agendada para o dia ${consulta.dataConsulta}`);
+    });
+  }
+
+  agendaConsultaDeslogado(nome: String, cpf: String, email: String, dataConsulta: Date, idEspecialidade: Number, idUnidade: Number, usuarioLogado: Boolean): void {
+    const consulta = {
+      nome,
+      cpf,
+      email,
+      dataConsulta,
+      idEspecialidade,
+      idUnidade,
+      usuarioLogado
+    }
+
+    console.log(consulta)
     this.htppClient.post<{ mensagem: String, status: Number }>(this.API + 'consulta/agendar', consulta).subscribe((dados) => {
       alert(`consulta agendada para o dia ${consulta.dataConsulta}`);
     });

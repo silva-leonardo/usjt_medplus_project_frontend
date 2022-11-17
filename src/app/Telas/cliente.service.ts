@@ -74,6 +74,9 @@ export class ClienteService {
     const Senha ={
       senha
     }
+
+    console.log(senha, cpfUser);
+
     this.htppClient.put(this.API+`redefinir/senha/usuario/${cpfUser}`,Senha)
     .pipe(catchError((error: any, caught: Observable<any>): Observable<any> =>{
     Swal.fire({

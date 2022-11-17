@@ -15,8 +15,14 @@ export class EsquecisenhaComponent implements OnInit {
   ngOnInit(): void {
   }
   atualizaSenha(form: NgForm){
+     //transforma o CPF
+     var ao_cpf= form.value.cpf; 
+     ao_cpf = ao_cpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+     ao_cpf = ao_cpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+     ao_cpf = ao_cpf.replace( /(\d{3})(\d{1,2})$/ , "$1-$2"); //Coloca um hífen entre o terceiro e o quarto dígitos
+    
     this.clienteService.redefinirSenha(
-      form.value.cpf, 
+      ao_cpf, 
       form.value.senha)
   }
 }
