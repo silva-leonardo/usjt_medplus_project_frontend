@@ -2,6 +2,7 @@
 ###### Unidades Curriculares do Semestre: Sistemas Distribuídos & Mobile |  Usabilidade, desenvolvimento web.
 ###### MEDPLUS se trata de uma solução computacional para clínicas médicas.
 ###### link do reposítorio do BACKEND do projeto: https://github.com/Mariannamonteiro/usjt_medplus_project_backend
+###### Link do vídeo de apresentação do projeto: https://www.youtube.com/watch?v=gfEEJ9Umv1Q
 
 
 **This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.**
